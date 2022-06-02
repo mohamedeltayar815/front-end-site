@@ -1,33 +1,33 @@
-let imgs = document.querySelectorAll("#projects .img")
-
-
-imgs.forEach(div => {
-    div.addEventListener("click", addActiveClass)
+$('.portfolio-menu ul li').click(function(){
+    $('.portfolio-menu ul li').removeClass('active');
+    $(this).addClass('active');
+    
+    var selector = $(this).attr('data-filter');
+    $('.portfolio-item').isotope({
+        filter:selector
+    });
+    return  false;
+});
+$(document).ready(function() {
+var popup_btn = $('.popup-btn');
+popup_btn.magnificPopup({
+type : 'image',
+gallery : {
+    enabled : true
+}
+});
 });
 
 
-function addActiveClass(){
-    imgs.forEach((div)=>{
-       
-        this.classList.toggle("active")
 
-    });
+let mopileNavMenu = document.querySelector("header svg");
+let navMenu = document.querySelectorAll("nav a");
 
 
-};
-
-let frontEndAllPic = document.querySelectorAll("#projects .fEFilter");
-let backEndAllPic = document.querySelectorAll("#projects .bEFilter");
-let fullStackAllPic = document.querySelectorAll("#projects .fSFilter");
-
-
-let frontEndFilter = document.querySelector(".febutton");
-let backEndFilter = document.querySelector(".bebutton");
-let fullStackFilter = document.querySelector(".fsbutton");
-let allPicFilter = document.querySelector(".allPicbutton");
-
-console.log(frontEndFilter);
-console.log(backEndFilter);
-console.log(fullStackFilter);
-console.log(allPicFilter);
-
+mopileNavMenu.addEventListener("click", navdisplay);
+function navdisplay(){
+    console.log(navMenu);
+    navMenu.forEach((a)=>{
+        a.classList.toggle("active")
+    })
+}

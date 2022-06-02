@@ -12,7 +12,7 @@ header {
 	position: fixed;
 	top: 0px;
 	opacity: 0.9;
-	display: flex;
+	display: flex !important;
 	background-color: #571762f0;
 	font-family: "Asap Condensed", sans-serif;
 	justify-content: space-between;
@@ -27,6 +27,9 @@ header div {
 	text-transform: capitalize;
 	letter-spacing: 3px;
 	color: white;
+}
+header svg {
+	display: none;
 }
 
 nav a {
@@ -206,64 +209,35 @@ section {
 .backEndOverlay::after {
 	clip-path: polygon(63% 81%, 100% 49%, 100% 100%, 0% 100%);
 }
-.frontEnd ul {
-}
-.frontEnd ul li {
-}
 
-.fullStack {
-}
-.backEnd {
-}
+/*  */
 
-#projects {
-	width: 80vw;
-	height: 80vh;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
+.portfolio-menu {
+	text-align: center;
 }
-#projects div {
+.portfolio-menu ul li {
 	display: inline-block;
-}
-.title,
-.filter {
-	display: block;
-	position: absolute;
-}
-.title {
-	margin: -190px;
-}
-#projects .filter {
-	margin: -90px;
-	width: 30vw;
-	min-width: 200px;
-	display: flex;
-}
-.filter button {
-	margin: 0px 10px;
-	width: 200px;
-	height: 50px;
-	font-size: 21px;
-	font-weight: bold;
-	border-radius: 5px;
+	margin: 0;
+	list-style: none;
+	padding: 10px 15px;
+	cursor: pointer;
+	-webkit-transition: all 05s ease;
+	-moz-transition: all 05s ease;
+	-ms-transition: all 05s ease;
+	-o-transition: all 05s ease;
+	transition: all 0.5s ease;
 }
 
-#projects img {
-	width: 20vw;
-	min-width: 140px;
-	height: auto;
+.portfolio-item {
+	/*width:100%;*/
+}
+.portfolio-item .item {
+	/*width:303px;*/
+	float: left;
+	margin-bottom: 10px;
+}
 
-	/* clip-path: polygon(50% 5%, 100% 30%, 100% 70%, 50% 95%, 0 70%, 0 30%); */
-	padding: 10px 10px;
-}
-#projects .active img {
-	position: absolute;
-	z-index: 15;
-	width: 80vw;
-	height: 80%;
-	margin: 0px 0px 200px 0px;
-}
+/*  */
 
 /* end of project section */
 
@@ -350,7 +324,7 @@ table td svg:hover {
 }
 
 footer {
-	display: flex;
+	display: flex !important;
 	background-color: black;
 	color: beige;
 	padding: 20px 10%;
@@ -364,4 +338,215 @@ footer h3 {
 }
 footer svg:hover {
 	color: #dd0303;
+}
+
+@media (max-width: 560px) {
+	header {
+		width: 100%;
+
+		height: auto;
+		position: fixed;
+		top: 0px;
+		opacity: 0.9;
+		display: block !important;
+		background-color: #571762f0;
+		font-family: "Asap Condensed", sans-serif;
+		justify-content: space-between;
+		align-content: center;
+		align-items: center;
+		padding: 0px 0px;
+		z-index: 20;
+	}
+	header svg {
+		display: inline-block;
+		color: white;
+		margin-left: 10%;
+		width: 40px !important;
+		height: 40px !important ;
+		cursor: pointer;
+		position: relative;
+		right: 0%;
+	}
+	header div {
+		font-size: 26px;
+		font-weight: 500;
+		text-transform: capitalize;
+		letter-spacing: 3px;
+		color: white;
+		display: inline-block;
+		padding: 10px;
+	}
+
+	nav a {
+		display: none;
+		text-align: center;
+	}
+	nav .active {
+		color: white;
+		text-decoration: none;
+		font-size: 30px;
+		font-weight: 600;
+		padding: 0px 10px;
+		display: block !important;
+		text-align: center;
+	}
+	nav a:hover {
+		color: peru;
+		cursor: pointer;
+		text-decoration: underline;
+		animation-duration: 0.6s;
+		animation-fill-mode: both;
+	}
+
+	section {
+		margin: 0px 10%;
+		padding: 00px 0px 0px 0px;
+	}
+	#about {
+		margin: 0px 0px 0px 0px;
+		padding: 50px;
+		width: 100%;
+		height: 100vh;
+		min-height: 890px;
+
+		background: linear-gradient(
+			270deg,
+			rgba(185, 52, 176, 0.82) 30%,
+			rgb(245, 245, 245) 30%
+		);
+	}
+
+	#about::before {
+		width: 230px;
+		height: 330px;
+
+		border: 10px solid #0e08017a;
+		border-radius: 50%;
+		content: "";
+		background-image: url(../images/my-pic-removebg-preview.png);
+		background-position: 53% 25%;
+		background-repeat: no-repeat;
+		position: absolute;
+
+		right: 5%;
+		top: 8%;
+		background-color: transparent;
+		z-index: 2;
+		overflow: visible;
+	}
+
+	.myCard {
+		padding: 10% 3%;
+		margin-top: 100%;
+	}
+	.hiMassage {
+		font-size: 20px;
+		font-weight: 900;
+		text-transform: capitalize;
+		font-family: "Asap Condensed", sans-serif;
+		padding: 30px 0px;
+		letter-spacing: 2px;
+		margin-top: 15px;
+	}
+	.myTitle {
+		font-size: 30px;
+		font-weight: 900;
+		text-transform: capitalize;
+		font-family: "Asap Condensed", sans-serif;
+		padding: 10px 0px;
+		letter-spacing: 5px;
+	}
+	.myTarget {
+		font-size: 25px;
+		font-weight: 900;
+		text-transform: capitalize;
+		font-family: "Asap Condensed", sans-serif;
+		padding: 10px 0px;
+		letter-spacing: 2px;
+	}
+	.nextSection button {
+		width: 220px;
+		height: 60px;
+		margin: 30px 0px;
+		text-decoration: none;
+		/* cursor: pointer; */
+		border-radius: 15px;
+		background-color: blue;
+		color: white;
+	}
+	.nextSection a {
+		text-decoration: none;
+		font-size: 25px;
+		font-weight: 900;
+		text-transform: capitalize;
+		font-family: "Asap Condensed", sans-serif;
+		color: white;
+		letter-spacing: 2px;
+	}
+	.socialIcon div {
+		display: inline-block;
+		padding: 10px 0px;
+	}
+	#skills {
+		margin: 0px;
+		padding: 0px;
+		display: flex;
+		flex-direction: column;
+		align-content: center;
+		justify-content: center;
+		align-items: center;
+	}
+
+	table {
+		border: 2px solid red;
+		width: 60vw;
+		/* min-width: 200px; */
+		/* margin-left: 5%; */
+		margin-bottom: 100px;
+	}
+	th {
+		border: 2px solid red;
+	}
+	table td {
+		border: 2px red;
+		border-style: double;
+		text-align: center;
+		height: 50px;
+		font-size: 14px;
+		font-weight: 600;
+	}
+	table th {
+		border: 2px red;
+		border-style: double;
+		text-align: center;
+		font-size: 14px;
+		font-weight: 600;
+	}
+	table td svg:hover {
+		color: #2341b8;
+	}
+
+	footer {
+		display: flex !important;
+		background-color: black;
+		color: beige;
+		padding: 10px 2%;
+		max-width: 100%;
+	}
+	footer h3 {
+		position: absolute;
+		width: 50%;
+		margin: 3px 0px 0px 20px;
+		text-transform: capitalize;
+		letter-spacing: 1px;
+		font-size: 14px;
+		font-weight: 400;
+	}
+	footer svg:hover {
+		color: #dd0303;
+	}
+	footer svg {
+		width: 28px !important;
+		height: 28px !important;
+	}
 }
